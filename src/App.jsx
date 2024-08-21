@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./Components/Home/Home";
 import Products from "./Components/Products/Products";
@@ -25,7 +25,7 @@ import ForgetPassword from "./Components/ForgetPaswword/ForgetPassword";
 import VerityResetPassword from "./Components/VerityResetPassword/VerityResetPassword";
 import ResetPassword from "./Components/ResetPassword/ResetPassword";
 
-const x = createBrowserRouter([
+const x = HashRouter([
   {
     path: "",
     element: <LayOut />,
