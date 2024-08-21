@@ -81,7 +81,7 @@ function Register() {
       );
       if(data.message == "success") {
         //! home ??? token 
-        navigate('/')
+        navigate('/login')
 
         setToken(data.token)
       }
