@@ -8,6 +8,8 @@ import img_2 from '../../assets/imgs/main-slider-2.jpeg'
 import img_3 from '../../assets/imgs/main-slider-3.jpeg'
 import img_4 from '../../assets/imgs/slide-1.jpeg'
 import img_5 from '../../assets/imgs/slide-2.jpeg'
+import img_6 from '../../assets/imgs/adidas.jpg'
+import img_7 from '../../assets/imgs/gitar.jpg'
 import Slider from 'react-slick'
 function MainSlider() {
     
@@ -25,7 +27,7 @@ function MainSlider() {
         console.log('Mounting MainSlider');
     } , [])
     return (
-        <div className='grid grid-cols-12 mb-4'>
+        <div className='grid grid-cols-12 mb-4 max-w-screen-md mx-auto'>
             {/* <div className="md:col-span-8 "> */}
             <Slider {...settings} className=' col-span-12 md:col-span-8 '>
                
@@ -39,8 +41,8 @@ function MainSlider() {
             </Slider>
             {/* </div> */}
             <div className=" col-span-12 md:col-span-4   bg-sky-400">
-                <img className='md:h-[200px] w-full ' src={img_2} alt="" />
-                <img className='md:h-[200px] w-full ' src={img_3} alt="" />
+                <img className='md:h-[200px] w-full ' src={img_7} alt="" />
+                <img className='md:h-[200px] w-full ' src={img_6} alt="" />
 
             </div>
         </div>

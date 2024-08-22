@@ -9,13 +9,14 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist" 
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.51.21",
     "@tanstack/react-query-devtools": "^5.51.21",
     "axios": "^1.7.2",
     "flowbite": "^2.4.1",
+    "flowbite-react": "^0.10.1",
     "formik": "^2.4.6",
     "generate-react-cli": "^8.4.8",
     "react": "^18.3.1",
