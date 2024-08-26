@@ -17,9 +17,9 @@ function Register() {
   const [isLoading, setIsLoading] = useState(false);
   const schema = Yup.object().shape({
     name: Yup.string()
-      .required("ektb el name")
-      .min(3, "mtkl4 3n 3 ch")
-      .max(10, "w mtaed4 3n 10 char"),
+      .required("name is required")
+      .min(3, "name must be at least 3 chars")
+      .max(10, "name must be at most 10 chars"),
     email: Yup.string().required().email("email is not valid"),
     password: Yup.string()
       .required("pass is required")
@@ -33,7 +33,7 @@ function Register() {
 
     phone: Yup.string()
       .required("phone is required")
-      .matches(/^01[0125][0-9]{8}$/, "phone must be valid egyptian num"),
+      .matches(/^01[0125][0-9]{8}$/, "phone must be valid egyptian number"),
   });
 
 

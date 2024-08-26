@@ -18,7 +18,7 @@ function Login() {
    
     email: Yup.string().required().email("email is not valid"),
     password: Yup.string()
-      .required("pass is required")
+      .required("password is required")
       .matches(
         /^[A-Z].{5,}/,
         "must be start with uppercase then at least 5 chars"
