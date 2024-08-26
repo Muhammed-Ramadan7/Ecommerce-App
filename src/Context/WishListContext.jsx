@@ -1,11 +1,12 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
 
  export const WishListContext =  createContext();
 
 
  export default function WishListContextProvider({children}){
-    const token = localStorage.getItem('token')
+    const {token} = useContext(UserContext);
     function getUserWishList(){
         return axios.get('https://ecommerce.routemisr.com/api/v1/wishlist' , {
             headers: {
@@ -48,11 +49,8 @@ import { createContext, useEffect, useState } from "react";
             setWishListItem(responce.data.numOfCartItems)
         }
     }
-    useEffect(() => {
-        getWishList()
-    }, [])
 
-    return <WishListContext.Provider value={  {getUserWishList , AddUserWishList, WishListItem,deleteUserWishList,setWishListItem,   }  }>
+    return <WishListContext.Provider value={  {getWishList , getUserWishList , AddUserWishList, WishListItem,deleteUserWishList,setWishListItem,   }  }>
         {children}
     </WishListContext.Provider>
  }

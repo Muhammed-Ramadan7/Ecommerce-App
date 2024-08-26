@@ -1,11 +1,12 @@
 import axios from "axios";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
+import { UserContext } from "./UserContext";
 
  export const CartContext =  createContext();
 
 
  export default function CartContextProvider({children}){
-    const token = localStorage.getItem('token')
+   const {token} = useContext(UserContext);
     function getUserCart(){
         return axios.get('https://ecommerce.routemisr.com/api/v1/cart' , {
             headers: {
@@ -73,11 +74,9 @@ import { createContext, useEffect, useState } from "react";
             setcartItem(responce.data.numOfCartItems)
         }
     }
-    useEffect(() => {
-        getCart()
-    }, [])
 
-    return <CartContext.Provider value={  {cartItem ,checkOutSessions, setcartItem, getUserCart , AddUserCart , UpdateUserCart, deleteUserCart}  }>
+
+    return <CartContext.Provider value={  {getCart ,cartItem ,checkOutSessions, setcartItem, getUserCart , AddUserCart , UpdateUserCart, deleteUserCart}  }>
         {children}
     </CartContext.Provider>
  }
